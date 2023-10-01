@@ -37,6 +37,9 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
       } else if (text === "-") {
         setDisplay(display + " - ");
         setEquation(equation + " - ");
+      } else if (text === "^") {
+        setDisplay(display + " ^ ");
+        setEquation(equation + " ** "); // Added the power functionality
       } else if (text === "=") {
         setDisplay(eval(equation));
         setEquation(eval(equation));

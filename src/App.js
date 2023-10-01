@@ -37,6 +37,7 @@ function App() {
       <Button text="0" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
       <Button text="." display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
       <Button text="=" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
+      <Button text="^" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} /> {/* Added the power button */}
      </div>
     </div>
    </div>
