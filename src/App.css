@@ -30,7 +30,12 @@
   cursor: pointer;
   border-radius: 10px;
  }
-  
+ 
+ .button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #d1b4c5;
+ }
+ 
  .calculator {
   background-color: var(--taupe-gray);
   border-radius: 5px;
