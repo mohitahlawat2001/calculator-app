@@ -4,8 +4,9 @@ import Button from "./components/Button";
 function App() {
  const [display, setDisplay] = useState("0");
  const [equation, setEquation] = useState()
- return (
+ return ( 
   <div className="App">
+  <p className="heading">Calculator</p>
    <div className="calculator">
     <div className="display">{display}</div>
     <div className="buttons">
