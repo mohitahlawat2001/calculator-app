@@ -34,7 +34,7 @@ function App() {
       }
      </div>
      <div className="buttonContainer">
-        const button_texts_5= ["0",".","="];
+        const button_texts_5= ["0",".","=","**"];
       for (let i = 0; i < button_texts_5.length; i++) {
        <Button text=button_texts_5[i] display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
       }
