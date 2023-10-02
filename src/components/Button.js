@@ -99,8 +99,15 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
       calculateTrigonometric("arctan");
     }
     else if (text === "=") {
-      setDisplay(eval(equation));
-      setEquation(eval(equation));
+      try {
+        const result = Function(`'use strict'; return (${equation})`)();
+        setDisplay(result);
+        setEquation(result);
+      } catch (error) {
+        console.error(error);
+        setDisplay("Error");
+        setEquation("");
+      }
     } else {
       setDisplay(display === "0" ? text : display + text);
       setEquation(equation + text);
