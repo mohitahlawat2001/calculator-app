@@ -1,58 +1,27 @@
-import React, { useState } from "react";
-import Button from "./components/Button";
+import React from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Navbar from "./components/Navbar"
+import Basic from "./pages/Basic"
+import Graphing from "./pages/Graphing"
+import Scientific from "./pages/Scientific"
+import Financial from "./pages/Financial"
  
 function App() {
- const [display, setDisplay] = useState("0");
- const [equation, setEquation] = useState()
+
  return (
   <div className="App">
-   <div className="calculator">
-    <div className="display">{display}</div>
-    <div className="buttons">
-     <div className="buttonContainer">
-      <Button text="AC" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="sin" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="cos" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="tan" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-     </div>
-     <div className="buttonContainer">
-     <Button text="arcsin" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="arccos" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="arctan" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="x" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-     </div>
-     <div className="buttonContainer">
-     <Button text="+/-" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="%" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="÷" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="-" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-     </div>
-     <div className="buttonContainer">
-      <Button text="7" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="8" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="9" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="+" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-     </div>
-     <div className="buttonContainer">
-      <Button text="4" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="5" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="6" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="^" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-     </div>
-     <div className="buttonContainer">
-      <Button text="1" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="2" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="3" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="^" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-     </div>
-     <div className="buttonContainer">
-      <Button text="0" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="." display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      <Button text="=" display={display} setDisplay={setDisplay} equation={equation} setEquation={setEquation} />
-      
-     </div>
-    </div>
-   </div>
+    <BrowserRouter>
+        <div>
+            <Navbar />
+        </div>
+        <Routes> 
+            <Route path="/Basic" element={<Basic />} />
+            <Route path="/Graphing" element={<Graphing />} />
+            <Route path="/Scientific" element={<Scientific />} />
+            <Route path="/Financial" element={<Financial />} />
+            <Route path="/" element={<Basic />} />
+        </Routes>
+    </BrowserRouter>
   </div>
  );
 }
