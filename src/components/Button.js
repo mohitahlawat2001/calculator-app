@@ -3,6 +3,38 @@ import "../App.css";
 const Button = ({ text, setDisplay, display, equation, setEquation }) => {
   const handleClick = () => {
 
+
+
+
+    const calculateTrigonometric = (operation) => {
+      let result;
+      switch (operation) {
+        case "sin":
+          result = Math.sin(parseFloat(display));
+          break;
+        case "cos":
+          result = Math.cos(parseFloat(display));
+          break;
+        case "tan":
+          result = Math.tan(parseFloat(display));
+          break;
+        case "arcsin":
+          result = Math.asin(parseFloat(display));
+          break;
+        case "arccos":
+          result = Math.acos(parseFloat(display));
+          break;
+        case "arctan":
+          result = Math.atan(parseFloat(display));
+          break;
+        default:
+          result = "";
+      }
+      setDisplay(result.toString());
+      setEquation(result.toString());
+    };
+
+
     if (display === "0" && "+-x÷%+/-.".includes(text)) { // if the display is 0 and the button is an operator, don't add the operator
       return
     } else if (display === "0" && text !== "AC") {
@@ -50,7 +82,23 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
     } else if (text === "^") {
       setDisplay(display + " ^ ");
       setEquation(equation + " ** "); // Added the power functionality
-    } else if (text === "=") {
+    } else if (text === "sin") {
+      calculateTrigonometric("sin");
+    }else if (text === "cos") {
+      calculateTrigonometric("cos");
+    }else if (text === "tan") {
+      calculateTrigonometric("tan");
+    }
+    else if (text === "arcsin") {
+      calculateTrigonometric("arcsin");
+    }
+    else if (text === "arccos") {
+      calculateTrigonometric("arccos");
+    }
+    else if (text === "arctan") {
+      calculateTrigonometric("arctan");
+    }
+    else if (text === "=") {
       setDisplay(eval(equation));
       setEquation(eval(equation));
     } else {
