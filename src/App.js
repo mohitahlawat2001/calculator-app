@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Button from "./components/Button";
+import History from "./components/History";
 
 function App() {
     const [display, setDisplay] = useState("0");
     const [equation, setEquation] = useState();
+    const [showHistory, setShowHistory] = useState(false);
 
     const buttonRows = [
         ["AC", "sin", "cos", "tan"],
@@ -29,7 +31,10 @@ function App() {
     return (
         <div className="App">
             <div className="calculator">
-                <div className="display">{display}</div>
+                <div className="display">
+                    <img id="history" src="https://cdn-icons-png.flaticon.com/512/61/61122.png" width="20px" height="20px" onClick={()=>setShowHistory(true)}/>
+                    {display}
+                </div>
                 <div className="buttons">
                     {buttonRows.map((row) => (
                         <div className="buttonContainer" key={row.join("")}>
@@ -38,6 +43,7 @@ function App() {
                     ))}
                 </div>
             </div>
+            {showHistory && <History setShowHistory={setShowHistory} />}
         </div>
     );
 }
