@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Button from "./components/Button";
 import History from "./components/History";
 
@@ -6,6 +6,7 @@ function App() {
     const [display, setDisplay] = useState("0");
     const [equation, setEquation] = useState();
     const [showHistory, setShowHistory] = useState(false);
+    const displayRef = useRef(null);
 
     const buttonRows = [
         ["AC", "sin", "cos", "tan"],
@@ -16,6 +17,10 @@ function App() {
         ["1", "2", "3", "^"],
         ["0", ".", "="],
     ];
+
+    useEffect(() => {
+        displayRef.current.scrollLeft = displayRef.current.scrollWidth;
+      }, [display]);
 
     const renderButton = (text) => (
         <Button
@@ -31,7 +36,7 @@ function App() {
     return (
         <div className="App">
             <div className="calculator">
-                <div className="display">
+                <div className="display" ref={displayRef}>
                     <img id="history" src="https://cdn-icons-png.flaticon.com/512/61/61122.png" width="20px" height="20px" onClick={()=>setShowHistory(true)}/>
                     {display}
                 </div>

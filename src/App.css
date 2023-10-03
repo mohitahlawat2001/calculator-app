@@ -4,9 +4,9 @@
   --french-gray: #b4b8c5;
   --silver: #a5a299;
   --taupe-gray: #8d818c;
- }
-  
- .App {
+}
+
+.App {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -14,9 +14,9 @@
   height: 100vh;
   width: 100vw;
   background: linear-gradient(45deg, var(--silver) 30%, var(--french-gray) 90%);
- }
-  
- .button {
+}
+
+.button {
   background-color: var(--lavender-web);
   border: none;
   color: black;
@@ -29,60 +29,74 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 10px;
- }
- 
- .button:hover{
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
   background-color: #d1b4c5;
- }
- 
- .calculator {
+}
+
+.calculator {
   background-color: var(--taupe-gray);
   border-radius: 5px;
   margin: 0 auto;
   padding: 20px 10px;
- }
-  
- .display {
-  background-color: #fff;
-  border: 1px solid var(--silver);
-  border-radius: 5px;
-  margin: 0 auto;
-  padding: 10px;
-  text-align: right;
-  font-size: 2rem;
-  width: 300px;  
-  white-space: nowrap;  
-  overflow-x: auto;     
-  overflow-y: hidden;  
-  display: flex;
-  justify-content: space-between;
-  
-  &::-webkit-scrollbar {
-      height: 8px;
-  }
+}
 
-  &::-webkit-scrollbar-thumb {
-      background-color: darkgrey;
-      border-radius: 4px;
-  }
+.display {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    text-align: right;
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid var(--silver);
+    border-radius: 5px;
 
-  &::-webkit-scrollbar-track {
-      background-color: lightgrey;
-  }
+    &::-webkit-scrollbar {
+        height: .5rem;
+    }
 
- }
-  
- .buttonContainer {
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: lightgrey;
+    }
+
+    & > *:first-child {
+        position: sticky;
+        top: 0;
+        left: 0;
+        padding: 1rem;
+        font-size: 1rem;
+        color: var(--french-gray);
+        background-color: #fff;
+        cursor: pointer;
+    }
+}
+
+
+.buttonContainer {
   border-radius: 5px;
   text-align: center;
   display: flex;
   flex-direction: row;
   gap: 10px;
- }
-  
- .buttons {
+}
+
+.buttons {
   border-radius: 5px;
   text-align: center;
   margin-top: 10px;
- }
+}
