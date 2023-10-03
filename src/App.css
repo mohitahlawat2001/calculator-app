@@ -51,6 +51,26 @@
   padding: 10px;
   text-align: right;
   font-size: 2rem;
+  width: 300px;  
+  white-space: nowrap;  
+  overflow-x: auto;     
+  overflow-y: hidden;  
+  display: flex;
+  justify-content: space-between;
+  
+  &::-webkit-scrollbar {
+      height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+      background-color: lightgrey;
+  }
+
  }
   
  .buttonContainer {
