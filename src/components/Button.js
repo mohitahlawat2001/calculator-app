@@ -2,7 +2,7 @@ import "../App.css";
 
 const Button = ({ text, setDisplay, display, equation, setEquation }) => {
   const handleClick = () => {
-
+  let history = JSON.parse(localStorage.getItem('history')) || [];
 
 
 
@@ -30,6 +30,11 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
         default:
           result = "";
       }
+      history.push(operation + "(" + display + ") = " + result);
+      if(history.length > 10){
+          history.shift();
+      }
+      localStorage.setItem('history', JSON.stringify(history));
       setDisplay(result.toString());
       setEquation(result.toString());
     };
@@ -101,6 +106,11 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
     else if (text === "=") {
       try {
         const result = Function(`'use strict'; return (${equation})`)();
+        history.push(equation + " = " + result);
+        if(history.length > 10){
+            history.shift();
+        }
+        localStorage.setItem('history', JSON.stringify(history));
         setDisplay(result);
         setEquation(result);
       } catch (error) {
