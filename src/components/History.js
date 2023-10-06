@@ -1,8 +1,7 @@
 import React from "react";
 import "./History.css";
 
-const History = ({setShowHistory}) => {
-  
+const History = ({ setShowHistory }) => {
   const history = JSON.parse(localStorage.getItem("history")) || [];
 
   return (
@@ -14,11 +13,14 @@ const History = ({setShowHistory}) => {
         </button>
       </div>
       <ul className="history-list">
-        {history.slice().reverse().map((item, index) => (
-          <li key={index} className="history-item">
-            {item}
-          </li>
-        ))}
+        {history
+          .slice()
+          .reverse()
+          .map((item, index) => (
+            <li key={index} className="history-item">
+              {item}
+            </li>
+          ))}
       </ul>
     </div>
   );
