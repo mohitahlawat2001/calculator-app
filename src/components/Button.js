@@ -118,7 +118,7 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
         setEquation(result);
       } catch (error) {
         console.error(error);
-        setDisplay("Error");
+        setDisplay("Error! ");
         setEquation("");
       }
     }
