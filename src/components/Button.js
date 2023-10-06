@@ -2,7 +2,7 @@ import "../App.css";
 
 const Button = ({ text, setDisplay, display, equation, setEquation }) => {
   const handleClick = () => {
-  let history = JSON.parse(localStorage.getItem('history')) || [];
+    let history = JSON.parse(localStorage.getItem('history')) || [];
 
 
 
@@ -31,8 +31,8 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
           result = "";
       }
       history.push(operation + "(" + display + ") = " + result);
-      if(history.length > 10){
-          history.shift();
+      if (history.length > 10) {
+        history.shift();
       }
       localStorage.setItem('history', JSON.stringify(history));
       setDisplay(result.toString());
@@ -89,9 +89,9 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
       setEquation(equation + " ** "); // Added the power functionality
     } else if (text === "sin") {
       calculateTrigonometric("sin");
-    }else if (text === "cos") {
+    } else if (text === "cos") {
       calculateTrigonometric("cos");
-    }else if (text === "tan") {
+    } else if (text === "tan") {
       calculateTrigonometric("tan");
     }
     else if (text === "arcsin") {
@@ -106,9 +106,12 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
     else if (text === "=") {
       try {
         const result = Function(`'use strict'; return (${equation})`)();
+        if (!isFinite(result)) {
+          throw new Error("Cannot divide by zero");
+        }
         history.push(equation + " = " + result);
-        if(history.length > 10){
-            history.shift();
+        if (history.length > 10) {
+          history.shift();
         }
         localStorage.setItem('history', JSON.stringify(history));
         setDisplay(result);
@@ -118,7 +121,8 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
         setDisplay("Error");
         setEquation("");
       }
-    } else {
+    }
+    else {
       setDisplay(display === "0" ? text : display + text);
       setEquation(equation + text);
     }
