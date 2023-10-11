@@ -37,13 +37,36 @@ Follow these steps to run the calculator application on your local machine:
 - Supports decimal numbers
 
 ## Screenshots
-
-<img src="images/image.png" alt="Image 1" width="150vw">
-<img src="images/image-1.png" alt="Image 2" width="150vw">
+<div style="display: flex; flex-direction: row;">
+   <img src="images/image.png" alt="Image 1" width="250">
+   <img src="images/image-1.png" alt="Image 2" width="250">
+</div>
+<div style="display: flex; flex-direction: row;">
+   <img src="images/decimal1.png" alt="Image 3" width="250">
+   <img src="images/decimal2.png" alt="Image 4" width="250">
+</div>
 
 ## Contributing
 
 If you'd like to contribute, please fork the repository and create a pull request. You can also open an issue for any bug reports or feature requests.
+
+## Hacktoberfest
+
+### What is Hacktoberfest ?
+
+[Hacktoberfest](https://hacktoberfest.com/about/) is a month-long celebration of open source software. It encourages developers to contribute to open source projects by submitting pull requests on GitHub. It's a fantastic opportunity to support the open source community, learn, and earn cool swag.
+
+### How to Participate ?
+
+1. **Register**: Sign up on the [Hacktoberfest website](https://hacktoberfest.com/).
+
+2. **Contribute**: Make at least four pull requests to any public GitHub repository. These can be fixes, improvements, or new features.
+
+3. **Follow the Rules**: Ensure that your pull requests adhere to the Hacktoberfest guidelines.
+
+4. **Spread the Word**: Encourage others to participate in Hacktoberfest.
+
+For more details, check out the official [Hacktoberfest website](https://hacktoberfest.com/about/).
 
 ---
 
