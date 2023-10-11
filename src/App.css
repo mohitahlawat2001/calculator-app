@@ -49,6 +49,7 @@
     width: 300px;
     margin: 0 auto;
     padding: 1rem 0;
+    padding-right:5px;
     text-align: right;
     font-size: 2rem;
     white-space: nowrap;
@@ -60,30 +61,31 @@
     background-color: #fff;
     border: 1px solid var(--silver);
     border-radius: 5px;
+}
 
-    &::-webkit-scrollbar {
-        height: .5rem;
-    }
 
-    &::-webkit-scrollbar-thumb {
-        background-color: darkgrey;
-        border-radius: 4px;
-    }
+.display::-webkit-scrollbar {
+  height: .5rem;
+}
 
-    &::-webkit-scrollbar-track {
-        background-color: lightgrey;
-    }
+.display::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 4px;
+}
 
-    & > *:first-child {
-        position: sticky;
-        top: 0;
-        left: 0;
-        padding: 1rem;
-        font-size: 1rem;
-        color: var(--french-gray);
-        background-color: #fff;
-        cursor: pointer;
-    }
+.display::-webkit-scrollbar-track {
+  background-color: lightgrey;
+}
+
+.display > *:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--french-gray);
+  background-color: #fff;
+  cursor: pointer;
 }
 
 
