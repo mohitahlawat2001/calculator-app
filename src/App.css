@@ -37,6 +37,11 @@
   background-color: #d1b4c5;
 }
 
+.button:active{
+  box-shadow: 0 0.1rem #998ca0;
+  transform: translateY(0.1rem);
+}
+
 .calculator {
   background-color: var(--taupe-gray);
   border-radius: 5px;
