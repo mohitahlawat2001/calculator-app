@@ -35,6 +35,7 @@ function App() {
 
     return (
         <div className="App">
+            <h1 className="calculator-title">Scientific Calculator</h1>
             <div className="calculator">
                 <div className="display" ref={displayRef}>
                     <img id="history" src="https://cdn-icons-png.flaticon.com/512/61/61122.png" width="20px" height="20px" onClick={()=>setShowHistory(true)}/>

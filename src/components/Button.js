@@ -37,9 +37,9 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
           break;
         default:
           result = "";
-
-        console.log(result);
       }
+
+      
 
       history.push(operation + "(" + display + ") = " + result);
       if(history.length > 10){

@@ -1,10 +1,13 @@
 .history-container {
-    width: 320px;
+    width: 40%;
     height: 550px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -13,7 +16,8 @@
 }
 
 .history-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color: var(--dark-blue);
     margin-bottom: 10px;
 }
 
@@ -25,14 +29,42 @@
 .history-item {
     font-size: 1rem;
     padding: 5px 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    margin: 5px 0;
-    border-radius: 5px;
+    background: rgba( 255, 255, 255, 0.5 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
     transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .history-item:hover {
-    background-color: #e8e8e8;
+    background-color: var(--light-blue);
+}
+
+.close-button {
+    border-radius: 50%;
+    padding: 10px 15px;
+    background: var(--sky-blue);
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    outline: none;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 800px) {
+    .history-container {
+        width: 90%;
+    }
 }
