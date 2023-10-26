@@ -52,14 +52,17 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
     };
 
 
-    if (display === "0" && "+-x÷%+/-.".includes(text)) { // if the display is 0 and the button is an operator, don't add the operator
+    if (display === "0" && "+-x÷%+/-.=".includes(text)) { 
+      // if the display is 0 and the button is an operator, don't add the operator
       return
     } else if (display === "0" && text !== "AC") {
       setDisplay(text);
       setEquation(text);
-    } else if ("+-x÷%+/-.".includes(text) && "+-x÷%+/-.".includes(display[display.length - 1])) { // if the last character is an operator, don't add another operator
+    } else if ("+-x÷%+/-.".includes(text) && "+-x÷%+/-.".includes(display[display.length - 1])) { 
+      // if the last character is an operator, don't add another operator
       return
-    } else if (typeof (parseInt(display)) === "number" && typeof (text) === "number") { // if the last character is a number, don't add another number
+    } else if (typeof (parseInt(display)) === "number" && typeof (text) === "number") { 
+      // if the last character is a number, don't add another number
       setDisplay(text)
       setEquation(text)
     } else if (text === "AC") {
