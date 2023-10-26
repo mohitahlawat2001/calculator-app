@@ -2,11 +2,13 @@ import "../App.css";
 
 const Button = ({ text, setDisplay, display, equation, setEquation }) => {
   const handleClick = () => {
+  
+  // retrieve history if it already exists
   let history = JSON.parse(localStorage.getItem('history')) || [];
 
 
-
-    const calculateTrigonometric = (operation) => {
+    
+    const calculateScientific = (operation) => {
       let result;
       switch (operation) {
         case "sin":
@@ -27,13 +29,23 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
         case "arctan":
           result = Math.atan(parseFloat(display));
           break;
+        case "sqrt":
+          result = Math.sqrt(parseFloat(display));
+          break;
+        case "log":
+          result = Math.log(parseFloat(display));
+          break;
         default:
           result = "";
       }
+
+      
+
       history.push(operation + "(" + display + ") = " + result);
       if(history.length > 10){
           history.shift();
       }
+
       localStorage.setItem('history', JSON.stringify(history));
       setDisplay(result.toString());
       setEquation(result.toString());
@@ -88,21 +100,28 @@ const Button = ({ text, setDisplay, display, equation, setEquation }) => {
       setDisplay(display + " ^ ");
       setEquation(equation + " ** "); // Added the power functionality
     } else if (text === "sin") {
-      calculateTrigonometric("sin");
+      calculateScientific("sin");
     }else if (text === "cos") {
-      calculateTrigonometric("cos");
+      calculateScientific("cos");
     }else if (text === "tan") {
-      calculateTrigonometric("tan");
+      calculateScientific("tan");
     }
     else if (text === "arcsin") {
-      calculateTrigonometric("arcsin");
+      calculateScientific("arcsin");
     }
     else if (text === "arccos") {
-      calculateTrigonometric("arccos");
+      calculateScientific("arccos");
     }
     else if (text === "arctan") {
-      calculateTrigonometric("arctan");
+      calculateScientific("arctan");
     }
+    else if(text === "sqrt") {
+      calculateScientific("sqrt")
+    }
+    else if(text === "log") {
+      calculateScientific("log")
+    }
+
     else if (text === "=") {
       try {
         const result = Function(`'use strict'; return (${equation})`)();
