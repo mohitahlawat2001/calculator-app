@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Button from "./components/Button";
 import History from "./components/History";
-import LCMCalculator from "./components/LCMCalculator";
 
 function App() {
     const [display, setDisplay] = useState("0");
@@ -17,6 +16,7 @@ function App() {
         ["4", "5", "6", "^"],
         ["1", "2", "3", "sqrt"],
         ["0", ".", "log", "="],
+        ["LCM"],
     ];
 
     useEffect(() => {
@@ -49,7 +49,6 @@ function App() {
                         </div>
                     ))}
                 </div>
-                <LCMCalculator />
             </div>
             {showHistory && <History setShowHistory={setShowHistory} />}
         </div>
